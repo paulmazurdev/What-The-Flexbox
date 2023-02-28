@@ -64,13 +64,61 @@ section, footer {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+}
+.flex-nav li{
+  flex-grow: 3;
+}
+.flex-nav .social{
+  flex-grow: 1;
 }
 
 @media all and (max-width:1000px) {
-
+  .flex-nav ul{
+    flex-wrap: wrap;
+  }
+  .flex-nav li{
+    flex-basis: 50%;
+  }
+  .flex-nav .social{
+    flex: 1 1 25%;
+  }
 }
 
 
 @media all and (max-width:500px) {
+  .flex-nav li{
+    flex-basis: 100%;
+   
+  }
+  .flex-nav ul{
+    display: none;
+  }
+
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+  } 
+  .toggleNav {
+    display:block;
+  }
+  .wrapper > *{
+    order: 1000;
+  }
+  .flex-nav{
+    order: 0;
+  }
+  .top{
+    order:1;
+  }
+  .details{
+    order: 2;
+  }
+  .signup{
+    order: 3;
+  }
   
+  .flex-nav ul.open{
+    display: flex;
+  }
 }
